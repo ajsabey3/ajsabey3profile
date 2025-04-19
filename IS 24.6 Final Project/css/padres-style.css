@@ -1,0 +1,97 @@
+/* Padres Theme Stylesheet */
+body {
+    background-color: #f4f1ee;
+    color: #2d2d2d;
+    font-family: 'Muli', sans-serif;
+}
+
+a {
+    color: #8d734b;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c8a654;
+    text-decoration: underline;
+}
+
+/* Navbar customizations */
+.navbar-dark.bg-dark {
+    background-color: #2d2d2d !important;
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link {
+    color: #f4f1ee !important;
+}
+
+.navbar-dark .nav-link:hover {
+    color: #c8a654 !important;
+}
+
+/* Section Titles */
+.resume-section-content h1,
+.resume-section-content h2 {
+    color: #523a28;
+}
+
+/* Highlighted name (Sabey) */
+.text-primary {
+    color: #c8a654 !important;
+}
+
+/* Social Icons */
+.social-icons a {
+    background-color: #523a28;
+    color: white;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #8d734b;
+}
+
+/* Divider line */
+hr.m-0 {
+    border-top: 2px solid #c8a654;
+}
+
+/* Awards and other icons */
+.fa-trophy.text-warning {
+    color: #c8a654 !important;
+}
+
+/* SideNav adjustments */
+#sideNav {
+    background-color: #2d2d2d;
+}
+
+#sideNav .nav-link {
+    color: #f4f1ee !important;
+}
+
+#sideNav .nav-link:hover {
+    color: #c8a654 !important;
+}
+
+/* Section padding for better visual space */
+.resume-section {
+    padding: 4rem 2rem;
+}
+
+.img-profile {
+    border: 3px solid #c8a654;
+}
+
+/* Dev icons color on Skills */
+.dev-icons i {
+    color: #523a28;
+}
+
+.dev-icons i:hover {
+    color: #c8a654;
+}
