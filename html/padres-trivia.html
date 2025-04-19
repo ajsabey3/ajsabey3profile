@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Padres Trivia</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #2f241d;
+      color: #ffc425;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question p {
+      font-weight: bold;
+    }
+    button {
+      background-color: #ffc425;
+      color: #2f241d;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .result {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+    a {
+      color: #ffc425;
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Padres Trivia Challenge</h1>
+
+  <div id="quiz"></div>
+
+  <button onclick="submitQuiz()">Submit Answers</button>
+
+  <div id="result" class="result"></div>
+
+  <a href="baseball.html">← Back to Main Page</a>
+
+  <script>
+    const questions = [
+      {
+        question: "Who is known as 'Mr. Padre'?",
+        options: ["Tony Gwynn", "Manny Machado", "Trevor Hoffman", "Ken Caminiti"],
+        answer: 0
+      },
+      {
+        question: "Which year did the Padres play in their first World Series?",
+        options: ["1998", "2004", "1984", "1976"],
+        answer: 2
+      },
+      {
+        question: "What is the name of the Padres' home stadium?",
+        options: ["Petco Park", "Qualcomm Stadium", "Oracle Park", "Dodger Stadium"],
+        answer: 0
+      },
+      {
+        question: "Who threw the first no-hitter in Padres history?",
+        options: ["Jake Peavy", "Blake Snell", "Joe Musgrove", "Yu Darvish"],
+        answer: 2
+      },
+      {
+        question: "What nickname did the Padres earn in 2020 for hitting 4 grand slams in 4 games?",
+        options: ["Grand Slam Squad", "Home Run Heroes", "Slam Diego", "Padres Powerhouse"],
+        answer: 2
+      }
+    ];
+
+    function loadQuiz() {
+      const quizDiv = document.getElementById("quiz");
+      quizDiv.innerHTML = "";
+      questions.forEach((q, i) => {
+        const qDiv = document.createElement("div");
+        qDiv.className = "question";
+        qDiv.innerHTML = `<p>${i + 1}. ${q.question}</p>` +
+          q.options.map((opt, j) => `
+            <label>
+              <input type="radio" name="q${i}" value="${j}"> ${opt}
+            </label><br>`).join('');
+        quizDiv.appendChild(qDiv);
+      });
+    }
+
+    function submitQuiz() {
+      let score = 0;
+      questions.forEach((q, i) => {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selected && parseInt(selected.value) === q.answer) {
+          score++;
+        }
+      });
+      document.getElementById("result").innerText = `You got ${score} out of ${questions.length} correct!`;
+    }
+
+    loadQuiz();
+  </script>
+</body>
+</html>
